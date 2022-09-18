@@ -13,6 +13,7 @@ routes.get('/', usersController.index);
 
 // Private Route
 routes.get('/user/:id', checkToken, usersController.showUser);
+routes.get('/users', checkToken, usersController.showAllUsers);
 
 // Register User
 routes.post('/auth/register', registerController.store);

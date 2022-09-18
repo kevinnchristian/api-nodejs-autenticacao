@@ -20,6 +20,11 @@ const usersController = {
     }
 
     return response.status(200).json({ user });
+  },
+  showAllUsers: async (request, response) => {
+    const user = await User.find({}, '-password');
+
+    return response.status(200).json({ user });
   }
 }
 
